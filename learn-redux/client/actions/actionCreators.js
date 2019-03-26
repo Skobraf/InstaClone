@@ -7,7 +7,7 @@ export const increment = (index) => (
 )
 
 // add comment
-export const addComent = (postId, author, comment) => (
+export const addComment = (postId, author, comment) => (
     {
         type:'ADD_COMMENT',
         postId,
