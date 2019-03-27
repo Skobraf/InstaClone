@@ -11,11 +11,15 @@ const defaultState = {
     posts,
     comments
 }
+const enhancers = compose(
+    window.deToolsExtension ? window.devToolsExtension() : f => f 
+);
 
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, defaultState, enhancers);
+
 if(module.hot) {
     module.hot.accept('./reducers/',() => {
-        const nextRoutReducer = require('/reducers/index').default;
+        const nextRoutReducer = require('./reducers/index').default;
         store.replaceReducer(nextRoutReducer);
     });
 }
