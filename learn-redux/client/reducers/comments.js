@@ -13,7 +13,6 @@ const postComments = (state=[], action) => {
         default:
             return state;
     }
-    return state;
 }
 
 const comments = (state = [], action) => {
